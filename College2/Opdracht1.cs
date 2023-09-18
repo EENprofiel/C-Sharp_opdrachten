@@ -1,56 +1,64 @@
 ﻿namespace C_Sharp_opdrachten.College2;
 
+public class Opdracht1
+{
 // Enumerations voor slot en kleur
-public enum SlotType {
-    GeenSlot,
-    Kabelslot,
-    Kettingslot
-}
+    public enum SlotType
+    {
+        GeenSlot,
+        Kabelslot,
+        Kettingslot
+    }
 
-public enum Kleur {
-    Rood,
-    Blauw,
-    Groen
-}
+    public enum Kleur
+    {
+        Rood,
+        Blauw,
+        Groen
+    }
 
 // Class Bicycle
-public class Bicycle {
+    public class Bicycle
+    {
+        // Properties
+        public SlotType Slot { get; set; }
+        public int FrameHoogte { get; set; }
+        public Kleur Kleur { get; set; }
 
-    // Properties
-    public SlotType Slot { get; set; }
-    public int FrameHoogte { get; set; }
-    public Kleur Kleur { get; set; }
+        // Status variabele
+        private bool IsGesloten { get; set; }
 
-    // Status variabele
-    private bool IsGesloten { get; set; }
+        // Constructor
+        public Bicycle(SlotType slot, int framehoogte, Kleur kleur)
+        {
+            this.Slot = slot;
+            this.FrameHoogte = framehoogte;
+            this.Kleur = kleur;
+            this.IsGesloten = false;
+        }
 
-    // Constructor
-    public Bicycle(SlotType slot, int framehoogte, Kleur kleur) {
-        this.Slot = slot;
-        this.FrameHoogte = framehoogte;
-        this.Kleur = kleur;
-        this.IsGesloten = false;
+        // Methodes
+        public void Lock()
+        {
+            this.IsGesloten = true;
+        }
+
+        public void Unlock()
+        {
+            this.IsGesloten = false;
+        }
+
+        // ToString() methode
+        public override string ToString()
+        {
+            return
+                $"Slot: {this.Slot} | Framehoogte: {this.FrameHoogte} | Kleur: {this.Kleur} | IsGesloten: {this.IsGesloten}";
+        }
     }
 
-    // Methodes
-    public void Lock() {
-        this.IsGesloten = true;
-    }
 
-    public void Unlock() {
-        this.IsGesloten = false;
-    }
-
-    // ToString() methode
-    public override string ToString() {
-        return $"Slot: {this.Slot} | Framehoogte: {this.FrameHoogte} | Kleur: {this.Kleur} | IsGesloten: {this.IsGesloten}";
-    }
-}
-
-public class Program {
-
-    public static void Execute() {
-
+    public static void Execute()
+    {
         // Creëer drie Bicycle objecten
         Bicycle racefiets = new Bicycle(SlotType.Kabelslot, 58, Kleur.Rood);
         Bicycle mountainbike = new Bicycle(SlotType.Kettingslot, 48, Kleur.Blauw);
