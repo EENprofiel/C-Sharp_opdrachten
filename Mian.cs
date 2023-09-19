@@ -21,7 +21,12 @@ public class Mian
         // College2.Opdracht2.Execute();
         // College2.Opdracht3.Execute();
         // College2.Opdracht4.Execute();
-        College2.Opdracht5.Execute();
+        // College2.Opdracht5.Execute();
+        
+        // --------------- college 3 ------------------
+        // College3.Opdracht1.Execute();
+        College3.Opdracht2.Execute();
+
 
     }
 }
