@@ -13,8 +13,22 @@ public class Opdracht2
         studenten.Add("Lolly", 1183214);
 
         // student zoeken op naam
-        if (studenten.ContainsKey("Jantje"))
+        foreach (var student in studenten)
         {
+            if (student.Key.Equals("Jantje"))
+            {
+                Console.WriteLine($"Studentennaam: {student.Key}");
+                Console.WriteLine($"Studentnummer: {student.Value}");
+            }
+        }
+
+        // student verwijderen op naam
+        studenten.Remove("Jantje");
+
+        foreach (var student in studenten)
+        {
+            Console.WriteLine($"Studentennaam: {student.Key}");
+            Console.WriteLine($"Studentnummer: {student.Value}");
             Console.WriteLine();
         }
     }
